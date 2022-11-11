@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
 }
 
 :root {
@@ -9,8 +10,65 @@
   --light-black: #393235;
   --dark-blue: #1b2d58;
   --border-btns: #334b69;
+  --border-input: #e6e6e6;
 }
 
 .app {
   height: 100vh;
+  background-color: #aaa;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.todo-container {
+  width: 450px;
+  padding: 15px;
+
+  background-color: #fff;
+
+  border-radius: 15px;
+}
+
+
+.add-component {
+  padding: 15px;
+  display: grid;
+  gap: 10px;
+  border-bottom: 1.5px solid #e6e6e6;
+}
+
+.add-component label {
+  color: var(--light-black);
+  font-size: 1.2rem;
+}
+
+.add-component #add-todo {
+  padding: 5px;
+  border: 2px solid var(--border-input);
+  border-radius: 3px;
+  margin-right: 5px;
+  width: 200px;
+  outline: none;
+}
+
+.add-component .add-btn {
+  padding: 4px 10px;
+
+  background-color: #fff;
+  font-size: 1rem;
+
+  border: 2px solid var(--dark-blue);
+  cursor: pointer;
+
+  font-weight: bold;
+
+  transition: 0.5s ease-in-out all;
+}
+
+.add-component .add-btn:hover {
+  background: var(--dark-blue);
+  color: #fff;
 }

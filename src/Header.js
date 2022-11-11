@@ -1,7 +1,15 @@
 import React from "react";
 
 const Header = ({ color }) => {
-  return <h1 className="title" style={{ color: color }}>Todo Avançado</h1>
+  const headerStyle = {
+    color: color,
+    textAlign: 'center',
+    borderBottom: '1.5px solid #e6e6e6',
+    padding: '15px 0'
+  }
+
+
+  return <h1 className="title" style={headerStyle}>Todo Avançado</h1>
 }
 
 export default Header;
