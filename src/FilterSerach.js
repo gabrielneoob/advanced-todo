@@ -7,7 +7,7 @@ const FilterSerach = () => {
         <div>
           <label htmlFor='search-input'>Pesquisar</label>
           <input type='text' placeholder='Buscar...' id='search-input' />
-          <button className='trash-btn'><i class="fa-solid fa-delete-left"></i></button>
+          <button className='trash-btn'><i className="fa-solid fa-delete-left"></i></button>
         </div>
 
         <div className='filter'>

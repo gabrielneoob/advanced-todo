@@ -95,8 +95,34 @@ label {
 
 .search-component .filter {
   display: grid;
-  justify-items: flex-end;
 
   border-left: 2px solid #e6e6e6;
   padding-left: 17px;
+}
+
+/*Todo*/
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px;
+}
+
+.todo-btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo-btns div {
+  padding: 8px;
+  border: 1px solid var(--dark-blue);
+  width: 34px;
+
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+
 }
