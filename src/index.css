@@ -3,3 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --blue: #375067;
+  --light-black: #393235;
+  --dark-blue: #1b2d58;
+  --border-btns: #334b69;
+}
+
+.app {
+  height: 100vh;
+}
