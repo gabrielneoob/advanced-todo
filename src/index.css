@@ -24,7 +24,7 @@
 }
 
 .todo-container {
-  width: 450px;
+  width: 410px;
   padding: 15px;
 
   background-color: #fff;
@@ -33,16 +33,19 @@
 }
 
 
-.add-component {
+.add-component,
+.search-component {
   padding: 15px;
   display: grid;
   gap: 10px;
-  border-bottom: 1.5px solid #e6e6e6;
+  border-bottom: 2px solid #e6e6e6;
 }
 
-.add-component label {
+label {
   color: var(--light-black);
   font-size: 1.2rem;
+  font-weight: 500;
+  display: block;
 }
 
 .add-component #add-todo {
@@ -54,7 +57,8 @@
   outline: none;
 }
 
-.add-component .add-btn {
+.add-component .add-btn,
+.trash-btn {
   padding: 4px 10px;
 
   background-color: #fff;
@@ -68,7 +72,31 @@
   transition: 0.5s ease-in-out all;
 }
 
-.add-component .add-btn:hover {
+.add-component .add-btn:hover,
+.trash-btn:hover {
   background: var(--dark-blue);
   color: #fff;
+}
+
+
+.search-component {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-component #search-input {
+  padding: 5px;
+  border: 2px solid var(--border-input);
+  border-radius: 3px;
+  outline: none;
+  margin-right: 5px;
+}
+
+.search-component .filter {
+  display: grid;
+  justify-items: flex-end;
+
+  border-left: 2px solid #e6e6e6;
+  padding-left: 17px;
 }
