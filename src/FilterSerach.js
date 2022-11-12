@@ -1,6 +1,31 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-const FilterSerach = () => {
+const FilterSerach = ({ setCurrentSelect, currentSelect, setUnfinishedTodo, setFinishedTodo, todo }) => {
+
+  useEffect(() => {
+    console.log(currentSelect);
+  }, [currentSelect])
+
+  function handleChangeSelect(e) {
+    const val = e.target.value;
+
+    switch (val) {
+      case 'finished':
+        setCurrentSelect('finished');
+        const novoFinished = todo.filter((item) => item.completed)
+        setFinishedTodo(novoFinished)
+        break;
+      case 'todo':
+        setCurrentSelect('todo');
+        const novoFinished2 = todo.filter((item) => !item.completed)
+        setUnfinishedTodo(novoFinished2)
+        break;
+      default:
+        setCurrentSelect('all');
+        break;
+    }
+  }
+
   return (
     <form>
       <div className='search-component'>
@@ -12,7 +37,7 @@ const FilterSerach = () => {
 
         <div className='filter'>
           <label>Filtrar</label>
-          <select>
+          <select onChange={handleChangeSelect}>
             <option value="all">todos</option>
             <option value="finished">finalizados</option>
             <option value="todo">a fazer</option>

@@ -6,6 +6,9 @@ import TodoList from './TodoList';
 
 const TodoApp = () => {
   const [todo, setTodo] = useState([]);
+  const [finishedTodo, setFinishedTodo] = useState([]);
+  const [unfinishedTodo, setUnfinishedTodo] = useState([]);
+  const [currentSelect, setCurrentSelect] = useState('all');
   const LOCAL_STORAGE_KEY = 'app.todo';
 
   // function handleCheck(id) {
@@ -27,8 +30,8 @@ const TodoApp = () => {
     <main className='todo-container'>
       <Header color="#393235" />
       <AddTodo todo={todo} setTodo={setTodo} />
-      <FilterSerach />
-      <TodoList todo={todo} setTodo={setTodo} />
+      <FilterSerach setCurrentSelect={setCurrentSelect} currentSelect={currentSelect} setFinishedTodo={setFinishedTodo} setUnfinishedTodo={setUnfinishedTodo} todo={todo} />
+      <TodoList todo={todo} setTodo={setTodo} currentSelect={currentSelect} finishedTodo={finishedTodo} unfinishedTodo={unfinishedTodo} />
     </main>
   )
 }
