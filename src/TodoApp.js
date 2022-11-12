@@ -6,7 +6,14 @@ import TodoList from './TodoList';
 
 const TodoApp = () => {
   const [todo, setTodo] = useState([]);
-  const LOCAL_STORAGE_KEY = 'app.todo'
+  const LOCAL_STORAGE_KEY = 'app.todo';
+
+  // function handleCheck(id) {
+  //   const newTodos = [...todo]
+  //   const todo = newTodos.find((todo) => todo.id === id);
+  //   todo.completed = !todo.completed;
+  //   return setTodo(newTodos);
+  // }
 
   useEffect(() => {
     const storagedTodos = localStorage.getItem(LOCAL_STORAGE_KEY);
@@ -21,7 +28,7 @@ const TodoApp = () => {
       <Header color="#393235" />
       <AddTodo todo={todo} setTodo={setTodo} />
       <FilterSerach />
-      <TodoList todo={todo} />
+      <TodoList todo={todo} setTodo={setTodo} />
     </main>
   )
 }
