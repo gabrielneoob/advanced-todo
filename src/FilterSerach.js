@@ -1,15 +1,20 @@
 import React, { useEffect } from 'react'
 
-const FilterSerach = ({ setCurrentSelect, currentSelect, setUnfinishedTodo, setFinishedTodo, todo, setSearchInput, searchInput }) => {
+const FilterSerach = ({ setCurrentSelect, currentSelect, setUnfinishedTodo, setFinishedTodo, todo, setSearchInput, searchInput, setSearchedTodos }) => {
 
   useEffect(() => {
     // console.log(currentSelect);
     console.log(searchInput);
+    console.log(todo);
   }, [searchInput])
 
   function handleChange(e) {
     const valor = e.target.value;
     setSearchInput(valor)
+
+    const pesquisa = todo.filter((item) => item.content.startsWith(valor))
+    setSearchedTodos([...pesquisa]);
+    console.log(pesquisa);
   }
 
 
