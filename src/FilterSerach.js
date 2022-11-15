@@ -1,10 +1,17 @@
 import React, { useEffect } from 'react'
 
-const FilterSerach = ({ setCurrentSelect, currentSelect, setUnfinishedTodo, setFinishedTodo, todo }) => {
+const FilterSerach = ({ setCurrentSelect, currentSelect, setUnfinishedTodo, setFinishedTodo, todo, setSearchInput, searchInput }) => {
 
   useEffect(() => {
-    console.log(currentSelect);
-  }, [currentSelect])
+    // console.log(currentSelect);
+    console.log(searchInput);
+  }, [searchInput])
+
+  function handleChange(e) {
+    const valor = e.target.value;
+    setSearchInput(valor)
+  }
+
 
   function handleChangeSelect(e) {
     const val = e.target.value;
@@ -31,7 +38,7 @@ const FilterSerach = ({ setCurrentSelect, currentSelect, setUnfinishedTodo, setF
       <div className='search-component'>
         <div>
           <label htmlFor='search-input'>Pesquisar</label>
-          <input type='text' placeholder='Buscar...' id='search-input' />
+          <input type='text' placeholder='Buscar...' id='search-input' onChange={handleChange} value={searchInput} />
           <button className='trash-btn'><i className="fa-solid fa-delete-left"></i></button>
         </div>
 

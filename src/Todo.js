@@ -8,8 +8,8 @@ const Todo = ({ currentTodo, todo, setTodo }) => {
   }
 
   useEffect(() => {
-    console.log(currentTodo);
-    console.log(todo);
+    // console.log(currentTodo);
+    // console.log(todo);
   }, [todo])
 
   function handleCheck() {

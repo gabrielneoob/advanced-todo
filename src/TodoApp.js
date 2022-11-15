@@ -9,6 +9,7 @@ const TodoApp = () => {
   const [finishedTodo, setFinishedTodo] = useState([]);
   const [unfinishedTodo, setUnfinishedTodo] = useState([]);
   const [currentSelect, setCurrentSelect] = useState('all');
+  const [searchInput, setSearchInput] = useState('')
   const LOCAL_STORAGE_KEY = 'app.todo';
 
   // function handleCheck(id) {
@@ -30,7 +31,7 @@ const TodoApp = () => {
     <main className='todo-container'>
       <Header color="#393235" />
       <AddTodo todo={todo} setTodo={setTodo} />
-      <FilterSerach setCurrentSelect={setCurrentSelect} currentSelect={currentSelect} setFinishedTodo={setFinishedTodo} setUnfinishedTodo={setUnfinishedTodo} todo={todo} />
+      <FilterSerach setSearchInput={setSearchInput} searchInput={searchInput} setCurrentSelect={setCurrentSelect} currentSelect={currentSelect} setFinishedTodo={setFinishedTodo} setUnfinishedTodo={setUnfinishedTodo} todo={todo} />
       <TodoList todo={todo} setTodo={setTodo} currentSelect={currentSelect} finishedTodo={finishedTodo} unfinishedTodo={unfinishedTodo} />
     </main>
   )
